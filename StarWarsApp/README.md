@@ -25,17 +25,15 @@
     * There are a couple of `.launch` files in `src/main/resources/` to build the project in Eclipse. One passes the tests (`StarWarsApp --- maven build with tests.launch`) and the other ignores them (`StarWarsApp --- maven build without tests.launch`)
 * **Docker**:
     * From your `cmd` go to the `StarWarsApp` folder where the `Dockerfile` is.
-    * Create container (`-t`) with a name:tag (`starwars:1.0`):
-    `docker build -t starwars:1.0 .`
-    * Run the created container (`starwars:1.0`) in background (`-d`), listening in the desired port (`-p 6969:6969`) and giving a name to the container (`--name StarWarsApp`):
-    `docker run -d -p 6969:6969 --name StarWarsApp starwars:1.0`
+    * Create container (`-t`) with a name:tag (`starwars:1.0`): `docker build -t starwars:1.0 .`.
+    * Run the created container (`starwars:1.0`) in background (`-d`), listening in the desired port (`-p 6969:6969`) and giving a name to the container (`--name StarWarsApp`): `docker run -d -p 6969:6969 --name StarWarsApp starwars:1.0`.
     * You can check the container is running by executing `docker ps` or in Docker Desktop.
     * You can stop the container by executing `docker stop StarWarsApp` or in Docker Desktop.
 
 ## Usage
 * **Endpoints**:
-    * GET: retrieves a list of names of the residents of the planet `planetName`: `localhost:6969/planets/residents-names-by-planet-name/{planetName}`
-    * GET: retrieves a list of starships (with all their information) used by the person `personName`: `localhost:6969/starships/starships-info-by-person-name/{personName}`
+    * GET: retrieves a list of names of the residents of the planet `planetName`: `localhost:6969/planets/residents-names-by-planet-name/{planetName}`.
+    * GET: retrieves a list of starships (with all their information) used by the person `personName`: `localhost:6969/starships/starships-info-by-person-name/{personName}`.
 * **Postman**: 
     * A Postman collection is included in `src/main/resources/StarWarsApp.postman_collection.json` for easy testing of the endpoints.
 * **Tests**:

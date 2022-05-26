@@ -68,7 +68,7 @@
     * The application is included in `jars/ConsumerApplication.jar`.
     * From a `cmd` just launch the command `java -jar ConsumerApplication.jar`. Every five seconds the polling message appears, and if a message is read from topic its contets are shown.
 * **ProducerApplication**: 
-    * The **ProducerApplication** produces a message taken from a JSON file and is sent to the topic . 
+    * The **ProducerApplication** produces a message taken from a JSON file and is sent to the topic. 
     * The application is included in `jars/ProducerApplication.jar`.
     * From another `cmd` just launch the command `java -jar ProducerApplication.jar -send "C:/route/to/file.json"`. The message will be sent to the topic and the **ConsumerApplication** will consume it in the next poll.
 * **JSON files**:
