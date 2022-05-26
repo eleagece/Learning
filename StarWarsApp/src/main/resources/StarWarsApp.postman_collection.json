@@ -1,0 +1,187 @@
+{
+	"info": {
+		"_postman_id": "116a0420-d8d8-478a-9e52-ca7268d0e819",
+		"name": "StarWarsApp",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "planets",
+			"item": [
+				{
+					"name": "residents names by planet name = naboo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:6969/planets/residents-names-by-planet-name/naboo",
+							"host": [
+								"localhost"
+							],
+							"port": "6969",
+							"path": [
+								"planets",
+								"residents-names-by-planet-name",
+								"naboo"
+							]
+						},
+						"description": "Get a list with the info of the starships from a character in star wars series."
+					},
+					"response": []
+				},
+				{
+					"name": "residents names by planet name = coruScAnT",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:6969/planets/residents-names-by-planet-name/coruScAnT",
+							"host": [
+								"localhost"
+							],
+							"port": "6969",
+							"path": [
+								"planets",
+								"residents-names-by-planet-name",
+								"coruScAnT"
+							]
+						},
+						"description": "Get a list with the info of the starships from a character in star wars series."
+					},
+					"response": []
+				},
+				{
+					"name": "residents names by planet name = taTooIne",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:6969/planets/residents-names-by-planet-name/taTooIne",
+							"host": [
+								"localhost"
+							],
+							"port": "6969",
+							"path": [
+								"planets",
+								"residents-names-by-planet-name",
+								"taTooIne"
+							]
+						},
+						"description": "Get a list with the info of the starships from a character in star wars series."
+					},
+					"response": []
+				},
+				{
+					"name": "residents names by planet name = ENDOR",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:6969/planets/residents-names-by-planet-name/ENDOR",
+							"host": [
+								"localhost"
+							],
+							"port": "6969",
+							"path": [
+								"planets",
+								"residents-names-by-planet-name",
+								"ENDOR"
+							]
+						},
+						"description": "Get a list with the info of the starships from a character in star wars series."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "starships",
+			"item": [
+				{
+					"name": "starships info by person name = luke skywalker",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:6969/starships/starships-info-by-person-name/luke skywalker",
+							"host": [
+								"localhost"
+							],
+							"port": "6969",
+							"path": [
+								"starships",
+								"starships-info-by-person-name",
+								"luke skywalker"
+							]
+						},
+						"description": "Get a list with the info of the starships from a character in star wars series."
+					},
+					"response": []
+				},
+				{
+					"name": "starships info by person name = chEwbAcca",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:6969/starships/starships-info-by-person-name/chEwbAcca",
+							"host": [
+								"localhost"
+							],
+							"port": "6969",
+							"path": [
+								"starships",
+								"starships-info-by-person-name",
+								"chEwbAcca"
+							]
+						},
+						"description": "Get a list with the info of the starships from a character in star wars series."
+					},
+					"response": []
+				},
+				{
+					"name": "starships info by person name = lAnDo Calrissian",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:6969/starships/starships-info-by-person-name/lAnDo Calrissian",
+							"host": [
+								"localhost"
+							],
+							"port": "6969",
+							"path": [
+								"starships",
+								"starships-info-by-person-name",
+								"lAnDo Calrissian"
+							]
+						},
+						"description": "Get a list with the info of the starships from a character in star wars series."
+					},
+					"response": []
+				},
+				{
+					"name": "starships info by person name = YODA",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:6969/starships/starships-info-by-person-name/YODA",
+							"host": [
+								"localhost"
+							],
+							"port": "6969",
+							"path": [
+								"starships",
+								"starships-info-by-person-name",
+								"YODA"
+							]
+						},
+						"description": "Get a list with the info of the starships from a character in star wars series."
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

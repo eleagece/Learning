@@ -1,0 +1,22 @@
+[
+    {
+        "name": "Pepe",
+        "id": 3,
+        "email": "pepe@nexthink.com"
+    },
+    {
+        "name": "Romeo",
+        "id": 4,
+        "email": "putin@nexthink.com"
+    },
+    {
+        "name": "Inma",
+        "id": 5,
+        "email": "inma@nexthink.com"
+    },
+    {
+        "name": "Antonio Jesús",
+        "id": 6,
+        "email": "antoniojesus@nexthink.com"
+    }
+]
