@@ -21,7 +21,7 @@
 * **Code and JAR**:
     * From your git client prompt, go to a folder of your choice and clone the repository: `git clone https://github.com/eleagece/Learning.git`. 
     * The project is inside `DocumentRanking`.
-    * The JAR needs to be generated from the code. If you use Eclipse follow theSE steps to create the JAR file:
+    * The JAR needs to be generated from the code. If you use Eclipse follow these steps to create the JAR file:
         * Right click in the project and then "Export...".
 	    * Choose "Java/Runnable JAR file" in the next window and then click on "Next".
         * In "Launch configuration" check for `src/code/Principal/` class and click on "Finish".
