@@ -1,5 +1,5 @@
 # **Learning**
-A small set of applications created in order to understand and practice different technologies.
+A small set of applications created in order to understand and practice different technologies, algorithms, data structures...
 
 ## [Star Wars App](https://github.com/eleagece/Learning/tree/main/StarWarsApp#readme)
 * Keywords: Java, JUnit, Microservices, Spring Boot, Docker, REST API, Postman, JSON.
