@@ -8,7 +8,7 @@
  
 ## Data repositories
 * Creamos un nuevo package/carpeta que se llama repositories y vamos a añadir AuthorRepository que heredará de CrudRepository<Author, Long>. El Long es por el id con la anotación @Id del Author.
-* save(S entity), saveAll(Iterable<S> entities), findById(ID id), existsById(ID id), findAll(), findAllById(Iterable<ID> ids), count(), deleteById(ID id), delete(T entity), deleteAll(Iterable<? extends T> entities, deleteAll().
+* `save(S entity), saveAll(Iterable<S> entities), findById(ID id), existsById(ID id), findAll(), findAllById(Iterable<ID> ids), count(), deleteById(ID id), delete(T entity), deleteAll(Iterable<? extends T> entities, deleteAll()`.
 * Nosotros sólo tenemos que preocuparnos de proporcionar la interfaz, Spring se ocupa de rellenar todo en tiempo de ejecución.
 * Hacemos un BookRepository exactamente igual.
 * Spring Data Repositories es una familia de proyectos. Data en concreto es para funcionar con JPA e Hibernate.
