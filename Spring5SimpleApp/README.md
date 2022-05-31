@@ -1,56 +1,46 @@
-# Spring Framework 5: Beginner to Guru
+# Spring 5 Simple App
 
-This repository is for an example application built in my [Spring Framework 5 - Beginner to Guru](https://www.udemy.com/testing-spring-boot-beginner-to-guru/?couponCode=GITHUB_REPO) online course
+##JPA Entities
 
-The application is a simple Spring Boot 2 / Spring Framework 5 web application. It is used to help students learn how
-to use the Spring Framework. Step by step instructions and detailed explanations can be found within the course.
+Para que los POJOs sean entidades JPA hay que ponerle la anotación @Entity y añadirle un private Long id con las anotaciones @Id y @GeneratedValue(strategy = GenerationType.AUTO) con su getter y setter. Mirar cómo se hace en Eclipse la creación del POJO (Constructor vacío, Constructor con atributos, Getters y Setters).
 
-As you work through the course, please feel free to fork this repository to your out GitHub repo. Most links contain links 
-to source code changes. If you encounter a problem you can compare your code to the lesson code. [See this link for help with compares](https://github.com/springframeworkguru/spring5webapp/wiki#getting-an-error-but-cannot-find-what-is-different-from-lesson-source-code)
+Para que la relación muchos a muchos funcione entre los autores y los libros hay que añadir en el Author sobre el Set<Book> books la anotacion @ManyToMany(mappedBy = "Authors").
 
-## Spring Framework 5: Beginner to Guru Course Wiki
-Got a question about your Spring Framework 5 course? [Checkout these FAQs!](https://github.com/springframeworkguru/spring5webapp/wiki)
+En el Book sobre Set<Author> authors hay que poner la anotación @ManyToMany y luego @JoinTable(...).
+ 
+El equals() y hashCode() son necesarios para que las entidades puedan diferenciarse en Hibernate. El toString() es bastante útil a la hora de depurar.
+ 
+##Data repositories
 
-## Getting Your Development Environment Setup
-### Recommended Versions
- | Recommended | Reference | Notes |
-| ----------- | --------- | ----- |
-| Oracle Java 8 JDK | [Download](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) | Java 11 is okay, see notes about Java [on the course wiki](https://github.com/springframeworkguru/spring5webapp/wiki/Java-Version) |
-| IntelliJ 2018 or Higher | [Download](https://www.jetbrains.com/idea/download/) | Ultimate Edition recommended. Students can get a free 120 trial license [here](https://github.com/springframeworkguru/spring5webapp/wiki/Which-IDE-to-Use%3F#how-do-i-get-the-free-120-day-trial-to-intellij-ultimate) |
-| Maven 3.6.0 or higher | [Download](https://maven.apache.org/download.cgi) | [Installation Instructions](https://maven.apache.org/install.html)|
-| Gradle 4.8 or higher | [Download](https://gradle.org/install/) | **Note:** Use Version 5 or higher if using Java 11 |
-| Git 2.15 or higher | [Download](https://git-scm.com/downloads) | | 
-| Git GUI Clients | [Downloads](https://git-scm.com/downloads/guis) | Not required. But can be helpful if new to Git. SourceTree is a good option for Mac and Windows users. |
-| Spring Boot 2.1 or higher | [What's new](https://content.pivotal.io/springone-platform-2017/whats-new-in-spring-boot-2-0-phillip-webb-madhura-bhave) | | 
+Creamos un nuevo package/carpeta que se llama repositories y vamos a añadir AuthorRepository que heredará de CrudRepository<Author, Long>. El Long es por el id con la anotación @Id del Author.
 
-## All Spring Framework Guru Courses
-### Spring Framework 5
-* [Spring Framework 5: Beginner to Guru](https://www.udemy.com/testing-spring-boot-beginner-to-guru/?couponCode=GITHUB_REPO) - Get the most modern and comprehensive course available for the Spring Framework! Join over 8,200 over Guru's in an Slack community exclusive to this course! More than 3,700 students have given this 53 hour course a 5 star review!
-* [Spring Boot Microservices with Spring Cloud Beginner to Guru](https://www.udemy.com/course/spring-boot-microservices-with-spring-cloud-beginner-to-guru/?referralCode=6142D427AE53031FEF38) - Master Microservice Architectures Using Spring Boot 2 and Cloud Based Deployments with Spring Cloud and Docker
-* [Reactive Programming with Spring Framework 5](https://www.udemy.com/reactive-programming-with-spring-framework-5/?couponCode=GITHUB_REPO_SF5B2G) - Keep your skills razor sharp and take a deep dive into Reactive Programming!
-* [Testing Spring Boot: Beginner to Guru](https://www.udemy.com/testing-spring-boot-beginner-to-guru/?couponCode=GITHUB_REPO_SF5B2G) - ** Best Selling Course** Become an expert in testing Java and Spring Applications with JUnit 5, Mockito and much more!
+save(S entity), saveAll(Iterable<S> entities), findById(ID id), existsById(ID id), findAll(), findAllById(Iterable<ID> ids), count(), deleteById(ID id), delete(T entity), deleteAll(Iterable<? extends T> entities, deleteAll().
 
-### SQL
-* [SQL Beginner to Guru: MySQL Edition](https://www.udemy.com/sql-beginner-to-guru-mysql-edition/?couponCode=GITHUB_REPO_SF5B2G) - SQL is a fundamental must have skill, which employers are looking for. Learn to master SQL on MySQL, the worlds most popular database!
+Nosotros sólo tenemos que preocuparnos de proporcionar la interfaz, Spring se ocupa de rellenar todo en tiempo de ejecución.
 
-### DevOps
-* [Apache Maven: Beginner to Guru](https://www.udemy.com/apache-maven-beginner-to-guru/?couponCode=GITHUB_REPO_SF5B2G) - **Best Selling Course** Take the mystery out of Apache Maven. Learn how to use Maven to build your Java and Spring Boot projects!
-* [OpenAPI: Beginner to Guru](https://www.udemy.com/course/openapi-beginner-to-guru/?referralCode=0E7F511C749013CA6AAD) - Master OpenAPI (formerly Swagger) to Create Specifications for Your APIs
-* [Docker for Java Developers](https://www.udemy.com/docker-for-java-developers/?couponCode=GITHUB_REPO_SF5B2G) - Best Selling Course on Udemy! Learn how you can supercharge your development by leveraging Docker. Collaborate with other students in a Slack community exclusive to the course!
-* [Spring Framework DevOps on AWS](https://www.udemy.com/spring-core-devops-on-aws/?couponCode=GITHUB_REPO_SF5B2G) - Learn how to build and deploy Spring applications on Amazon AWS!
-* [Ready for Production with Spring Boot Actuator](https://www.udemy.com/ready-for-production-with-spring-boot-actuator/?couponCode=GITHUB_REPO_SF5B2G) - Learn how to leverage Spring Boot Actuator to monitor your applications running in production.
+Hacemos un BookRepository exactamente igual.
 
-### Web Development with Spring Framework
-* [Angular 4 Java Developers](https://www.udemy.com/angular-4-java-developers/?couponCode=GITHUB_REPO_SF5B2G) - Learn how to use Angular with Spring Boot. Two flaming hot technologies! This is the only course on Udemy where you can learn how to use JHipster to rapidly build your next application! Also, be sure to checkout the Slack community for this course!
-* [Mastering Thymeleaf with Spring Boot](https://www.udemy.com/mastering-thymeleaf-with-spring/?couponCode=GITHUB_REPO_SF5B2G) - Once you learn Thymeleaf, you'll never want to go back to using JSPs for web development!
+Spring Data Repositories es una familia de proyectos. Data en concreto es para funcionar con JPA e Hibernate.
 
-### Spring Framework 4
-* [Spring Core](https://www.udemy.com/spring-core/) - Learn the core of Spring Framework 4!
-* [Spring Core Advanced](https://www.udemy.com/spring-core-advanced-beyond-the-basics/?couponCode=GITHUB_REPO_SF5B2G) - Go beyond the basics! Learn about Aspect Oriented Programming, Spring Security, using Spring Events, JMS and more!
+Spring Data abstrae el montón de código ceremonial de JDBC.
 
-## Connect with Spring Framework Guru
-* Spring Framework Guru [Blog](https://springframework.guru/)
-* Subscribe to Spring Framework Guru on [YouTube](https://www.youtube.com/channel/UCrXb8NaMPQCQkT8yMP_hSkw)
-* Like Spring Framework Guru on [Facebook](https://www.facebook.com/springframeworkguru/)
-* Follow Spring Framework Guru on [Twitter](https://twitter.com/spring_guru)
-* Connect with John Thompson on [LinkedIn](http://www.linkedin.com/in/springguru)
+##Inicializar Data
+
+Paquete bootstrap con clase BootStrapData que implemente CommandLineRunner (interfaz que sirve para que Spring busque instancias de este tipo para hacerlas correr. Tienen su método run(String... args)). A la clase BootStrapData Le ponemos la anotación @Component para que Spring la detecte como Spring managed component. Así conseguimos la inyección de dependencias para las variables authorRepository y bookRepository. Eso significa que no tenemos que instanciarlas manualmente, ya que al crear los Author y Book necesarios e insertarlos Spring lo hace por nosotros (por debajo Spring Data JPA usa Hibernate para guardar los objetos en la base de datos en memoria H2).
+
+Publisher tiene un Set<Book> con la anotación @OneToMany y @JoinColumn(name = "publisher_id"). Esto último hace que los Book tengan foreign key apuntando al id del Publisher. En Book hay que poner un Publisher con la anotación @ManyToOne. Evidentemente en BootStrapData hay que crear el Publisher y ponerselo a los Book.
+
+Hibernate hace todas las sentencias SQL por nosotros basándose en las definiciones que damos en JPA ya sea los modelos o las relaciones que ponemos entre ellos con las anotaciones @OnetoMany, @JoinColumn etc.
+
+##H2 Database console
+
+en resources/application.properties ponemos spring.h2.console.enabled = true para poder tener acceso a la base de datos desde localhost:8080/h2-console/. Es importante poner bien la cadena de conexión (jdbc:...), la cual nos sale en la consola al iniciar la aplicación como algo así: H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'.
+
+##MVC
+Cliente hace HTTP requests al controlador del servidor y este hace lo que considere con el modelo el cual viene de base de datos y se lo manda a la vista para que lo muestre (se puede hacer con Thymeleaf que coge el POJO del modelo y lo pasa a HTML). El modelo se consigue a través de un servicio.
+
+Nuevo paquete controllers creando el controlador BookController con la anotación @Controller para que Spring sepa que esto va a ser un controlador MVC.
+
+Hacemos el método getBooks() y lo mapeamos a una ruta con @RequestMapping("/books") con lo que cuando se acceda a esa ruta, Spring llamará a este método. Al BookController le hacemos su constructor en el que rellenaremos un bookRepository. Al tener la etiqueta @Controller cuando Spring instancie, inyectará el bookRepository necesario.
+
+El método getBooks(Model model) proporciona el modelo que será enviado a la capa de Vista. Este modelo lo poblamos con la información del bookRepository.findAll(). Devolveremos el atributo por el nombre con el que lo añadimos, en este caso "books".
